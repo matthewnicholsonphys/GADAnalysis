@@ -1,0 +1,5 @@
+*.root
+lookin_plots/
+set_plots/
+old_dataset/
+*~
