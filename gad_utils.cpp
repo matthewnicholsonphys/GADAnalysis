@@ -372,3 +372,11 @@ TGraph Normalise(TGraph a){
   a.Scale(1/max);
   return a;
 }
+
+TGraph ZeroNegative(TGraph a){
+  TGraph result(number_of_points);
+  for (int i = 0; i < number_of_points; ++i){
+    result.SetPoint(i, a.GetPointX(i), abs(a.GetPointY(i)) + 0.01);
+  }
+  return result;
+}

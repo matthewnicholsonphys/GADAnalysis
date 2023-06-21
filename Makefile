@@ -11,7 +11,7 @@ ROOT_FLAGS=`root-config --cflags --libs | sed 's/-I/-isystem/g'`
 
 COMP_IN= $(CFLAGS)  $< -o $@ $(ROOT_FLAGS) $(CXXFLAGS)	
 
-all: main lookin set_plotter resolution run_data_analysis
+all: main lookin set_plotter resolution run_data_analysis emptytube
 
 main: main.cpp gad_utils.cpp
 	$(GCC) $(CFLAGS) $^ -o $@ $(ROOT_FLAGS) $(CXXFLAGS)
@@ -19,6 +19,8 @@ main: main.cpp gad_utils.cpp
 run_data_analysis: run_data_analysis.cpp gad_utils.cpp
 	$(GCC) $(CFLAGS) $^ -o $@ $(ROOT_FLAGS) $(CXXFLAGS)
 
+emptytube: emptytube.cpp gad_utils.cpp
+	$(GCC) $(CFLAGS) $^ -o $@ $(ROOT_FLAGS) $(CXXFLAGS)	
 
 resolution: resolution.cpp
 	$(GCC) $(CFLAGS) $^ -o $@ $(ROOT_FLAGS) $(CXXFLAGS)

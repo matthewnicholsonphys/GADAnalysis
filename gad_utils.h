@@ -149,4 +149,5 @@ double GetPeakDiff(const TGraph&);
 double GetPeakRatio(const TGraph&);
 TGraph TrimGraph(const TGraph&, double l=wave_min, double h=wave_max);
 TGraph Normalise(TGraph);
+TGraph ZeroNegative(TGraph);
 #endif 
